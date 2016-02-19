@@ -6,7 +6,7 @@ import routing from './home.routes';
 import HomeController from './home.controller';
 
 import randomNames from '../../services/randomNames.service';
-import greeting from '../../directives/greeting.directive';
+import greeting from '../../components/greeting.component';
 
 
 export default angular.module('app.home', [uirouter, randomNames, greeting])
