@@ -120,8 +120,9 @@ module.exports = function makeWebpackConfig () {
   // ISPARTA LOADER
   // Reference: https://github.com/ColCh/isparta-instrumenter-loader
   // Instrument JS files with Isparta for subsequent code coverage reporting
-  // Skips node_modules and files that end with .test.js
+  // Skips node_modules and files that end with .spec.js
   if (ENV === 'test') {
+    console.log('webpack.config ENV:', ENV)
     config.module.preLoaders.push({
       test: /\.js$/,
       exclude: [

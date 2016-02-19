@@ -9,8 +9,14 @@ describe('Controller: Home', function() {
     $controller = _$controller_;
   }));
 
-  it('name is initialized to World', function() {
+  it('should initialize name to World', function() {
     let ctrl = $controller('HomeController');
     expect(ctrl.name).toBe('World');
+  });
+
+  it('should change name to "angular-tips" when changeName() is called', function() {
+  	let ctrl = $controller('HomeController');
+  	ctrl.changeName();
+  	expect(ctrl.name).toBe('angular-tips');
   });
 });
