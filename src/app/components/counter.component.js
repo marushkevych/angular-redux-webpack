@@ -1,19 +1,31 @@
 import angular from 'angular';
+import * as CounterActions from '../actions/counter';
+
+class CounterController {
+
+  constructor($ngRedux, $scope) {
+    'ngInject';
+
+    /* ngRedux will merge the requested state's slice and actions onto this, 
+    you don't need to redefine them in your controller */
+    
+    let unsubscribe = $ngRedux.connect(mapStateToThis, CounterActions)(this);
+    $scope.$on('$destroy', unsubscribe);
+  }
+
+}
+
+function mapStateToThis(state) {
+  return {
+    count: state.counter
+  };
+}
 
 const options = {
   bindings: {
     count: '<'
   },
-  controller: function () {
-    function increment() {
-      this.count++;
-    }
-    function decrement() {
-      this.count--;
-    }
-    this.increment = increment;
-    this.decrement = decrement;
-  },
+  controller: CounterController,
   template: [
     '<div class="todo">',
       '<input type="text" ng-model="$ctrl.count">',
