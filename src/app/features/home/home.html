@@ -1,9 +1,10 @@
 <div id="home-header" class="jumbotron">
+	<h2>Count: {{home.count}}</h2>
 	<greeting name="home.name" />
 </div>
 
 <button class="btn btn-primary" ng-click="home.changeName()">Change</button>
 <button class="btn btn-danger" ng-click="home.randomName()">Random</button>
 
-<h4>Counter component:</h4>
-<counter count="10" />
+
+<counter step="3" />

@@ -1,5 +1,5 @@
 export default function routes($stateProvider) {
-	'ngInject';
+  'ngInject';
   $stateProvider
     .state('home', {
       url: '/',

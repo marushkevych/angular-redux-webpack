@@ -7,7 +7,7 @@ import HomeController from './home.controller';
 
 import randomNames from '../../services/randomNames.service';
 import greeting from '../../components/greeting.component';
-import counter from '../../components/counter.component';
+import counter from '../../components/counter';
 
 
 export default angular.module('app.home', [uirouter, randomNames, greeting, counter])
